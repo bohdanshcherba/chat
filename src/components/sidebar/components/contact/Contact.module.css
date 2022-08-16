@@ -1,0 +1,16 @@
+.contact {
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+}
+
+.avatar {
+    width: 15%;
+}
+.user_caption {
+    width: 60%;
+    background-color: blue;
+}
+.message_time {
+    width: 25%;
+}

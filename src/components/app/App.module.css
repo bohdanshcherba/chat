@@ -1,0 +1,22 @@
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+
+.chat {
+    width: 80%;
+    height: 100%;
+    background-color: red;
+
+}
+
+.header {
+    background-color: coral;
+    height: 10%;
+}
+
+.chat__content {
+    height: 80%;
+    background-color: gray;
+}
