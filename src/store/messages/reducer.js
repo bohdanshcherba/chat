@@ -19,6 +19,11 @@ const reducer = createReducer(initialState, builder => {
         state.current_chat_messages = action.payload.messages
         state.isLoading = false
     })))
+    builder.addCase(messagesActionCreator.getAnswerMessage.fulfilled, (((state, action) => {
+        state.all_messages = action.payload.messages
+        state.current_chat_messages = action.payload.messages
+        state.isLoading = false
+    })))
     builder.addCase(messagesActionCreator.loadMessages.fulfilled, (((state, action) => {
         state.all_messages = action.payload.messages
         state.isLoading = false

@@ -32,6 +32,9 @@ function Chat({currentDialogId}) {
         if (msgText !== '') {
             dispatch(messagesActionCreator.sendMessage({text: msgText, user_id: 4, chat_id: currentDialogId}))
             dispatch(contactsActionCreator.update_contact({contact_id: currentDialogId, text: msgText}))
+            setTimeout(()=>{
+                dispatch(messagesActionCreator.getAnswerMessage({ user_id: 4, chat_id: currentDialogId}))
+            }, 5000)
             dispatch(contactsActionCreator.get_contacts())
 
             setMsgText('')
