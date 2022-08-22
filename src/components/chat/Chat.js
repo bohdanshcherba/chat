@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import s from "./Chat.module.css";
 import {Avatar} from "../avatar/Avatar";
 import {MyMessage, TheirMessage} from "./components/components";
@@ -10,8 +10,9 @@ function Chat({currentDialogId}) {
 
     const dispatch = useDispatch()
 
-    const {messages, contacts} = useSelector(state => ({
+    const {messages, contacts, notification} = useSelector(state => ({
         messages: state.messages.current_chat_messages,
+        notification: state.messages.notification,
         contacts: state.contacts.contacts,
     }));
 
@@ -19,6 +20,10 @@ function Chat({currentDialogId}) {
         dispatch(contactsActionCreator.get_contacts())
         dispatch(messagesActionCreator.loadMessages())
     }, [dispatch])
+
+    if(currentDialogId === notification.contact_id){
+        dispatch(messagesActionCreator.updateNotification({notification:false}))
+    }
 
     useEffect(() => {
         dispatch(messagesActionCreator.getMessagesByChatId({chat_id: currentDialogId}))
@@ -68,6 +73,7 @@ function Chat({currentDialogId}) {
                         return null
                     }
                 })}
+
             </div>
             <div className={s.input_block}>
                 <input type="text" placeholder={'Type your message'} value={msgText}

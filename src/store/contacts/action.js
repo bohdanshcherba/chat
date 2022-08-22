@@ -19,7 +19,7 @@ const get_contacts = createAsyncThunk(ActionType.GET_CONTACTS, async (request, {
     }
 
     services.storage.setItem('contacts', contacts)
-    console.log(contacts, new Date().getSeconds())
+
     return {contacts}
 })
 
@@ -35,7 +35,6 @@ const update_contact = createAsyncThunk(ActionType.GET_CONTACTS, async ({contact
     contacts.find(el => el.id === contact_id).date_last_message = JSON.stringify(date)
 
     services.storage.setItem('contacts', contacts)
-    dispatch(get_contacts())
 
     return {contacts}
 })

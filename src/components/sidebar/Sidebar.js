@@ -37,18 +37,22 @@ function Sidebar({current_user_id, setCurrentDialog}) {
         if (event.target.value === '') {
             setShowContacts(contacts)
         }
+    }
 
+    const setCurrentDialogHandler = (id) => {
+        setCurrentDialog(id)
+        setValue('')
     }
 
     const filter = () => {
         if (value === '') {
             let filtered = contacts.filter(el=>el.last_message!=='')
             return <ListContacts showContacts={filtered}
-                                 setCurrentDialog={setCurrentDialog}
+                                 setCurrentDialog={setCurrentDialogHandler}
                                  current_user_id={current_user_id}/>
         } else if (showContacts.length !== 0) {
             return <ListContacts showContacts={showContacts}
-                                 setCurrentDialog={setCurrentDialog}
+                                 setCurrentDialog={setCurrentDialogHandler}
                                  current_user_id={current_user_id}/>
         } else {
             return <div>not found</div>

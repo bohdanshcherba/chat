@@ -30,6 +30,7 @@
 
 
 .chat__content {
+    position: relative;
     height: 80%;
     max-height: 80%;
     overflow-y: auto;
@@ -115,4 +116,9 @@
     animation-iteration-count: 1;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 0;
 }
