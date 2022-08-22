@@ -30,7 +30,7 @@ export const default_contacts = [
     {
         id:4,
         username:'Bohdan',
-        avatar:'https://www.jurgo.sk/assets/img/faces/jozef.jpg',
+        avatar:'https://www.pixinvent.com/materialize-material-design-admin-template/laravel/demo-4/images/avatar/avatar-7.png',
         last_message:'Hello, how are you?',
         date_last_message: JSON.stringify(new Date()),
     },
