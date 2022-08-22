@@ -1,0 +1,33 @@
+.message {
+    float: left;
+    margin-left: 10px;
+    padding-bottom: 19px;
+    padding-right: 50%;
+
+    width: fit-content;
+    max-width: 70%;
+    word-wrap: break-word;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    margin-left: 10px;
+}
+
+.text {
+    background-color: #3F72AF;
+    border-radius: 25px;
+    padding: 6px 15px;
+    color: #DBE2EF;
+}
+
+.date {
+    position: absolute;
+    width: 100px;
+
+    padding-top: 2px;
+    font-size: 10px;
+    left: 50px;
+}
