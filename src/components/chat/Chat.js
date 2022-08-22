@@ -10,15 +10,14 @@ function Chat({currentDialogId}) {
 
     const dispatch = useDispatch()
 
-    const {contacts, messages} = useSelector(state => ({
+    const {messages, contacts} = useSelector(state => ({
+        messages: state.messages.current_chat_messages,
         contacts: state.contacts.contacts,
-        messages: state.messages.current_chat_messages
     }));
 
     useEffect(() => {
         dispatch(contactsActionCreator.get_contacts())
         dispatch(messagesActionCreator.loadMessages())
-
     }, [dispatch])
 
     useEffect(() => {
@@ -28,21 +27,15 @@ function Chat({currentDialogId}) {
     const [msgText, setMsgText] = useState('')
 
     const sendMessage = () => {
-
         if (msgText !== '') {
             dispatch(messagesActionCreator.sendMessage({text: msgText, user_id: 4, chat_id: currentDialogId}))
             dispatch(contactsActionCreator.update_contact({contact_id: currentDialogId, text: msgText}))
-            setTimeout(()=>{
-                dispatch(messagesActionCreator.getAnswerMessage({ user_id: 4, chat_id: currentDialogId}))
-            }, 5000)
             dispatch(contactsActionCreator.get_contacts())
-
             setMsgText('')
         }
-
     }
 
-    let current_companion = contacts.find(el=>el.id === currentDialogId)
+    let current_companion = contacts.find(el => el.id === currentDialogId)
 
     return (
         <div className={s.chat}>

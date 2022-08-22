@@ -16,11 +16,11 @@ function Contact({id,username, last_message, date_last_message, avatar, setCurre
                 <div className={s.dialog_title}>
                     <div className={s.user_title}>{username}</div>
                     <div className={s.message_time}>
-                        {time_convertor_contacts(date_last_message)}
+                        {date_last_message!==JSON.stringify(new Date('1999'))? time_convertor_contacts(date_last_message): null}
                     </div>
                 </div>
 
-                <div className={s.dialog_subtitle}>{last_message}</div>
+                <div className={s.dialog_subtitle}>{last_message?last_message:<span className={s.start}>Start a new conversation</span>}</div>
             </div>
 
 

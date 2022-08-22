@@ -9,7 +9,11 @@ const getMessagesByChatId = createAsyncThunk(ActionType.GET_MESSAGE, async ({cha
     return {messages}
 });
 
-const sendMessage = createAsyncThunk(ActionType.SEND_MESSAGE, async ({text, user_id, chat_id,}, {extra: {services}, getState}) => {
+const sendMessage = createAsyncThunk(ActionType.SEND_MESSAGE, async ({text, user_id, chat_id,}, {extra: {services},
+    getState,
+    dispatch
+
+}) => {
 
     let messages = services.storage.getItem('messages')
 
@@ -20,6 +24,17 @@ const sendMessage = createAsyncThunk(ActionType.SEND_MESSAGE, async ({text, user
         user_id: user_id,
         chat_id: chat_id,
     })
+
+
+
+    setTimeout(() => {
+        dispatch(getAnswerMessage({user_id: user_id, chat_id: chat_id}))
+        setTimeout(()=>{
+            dispatch(contactsActionCreator.get_contacts())
+
+        },500)
+
+    }, 10000)
 
     services.storage.setItem('messages', messages)
 
@@ -43,15 +58,17 @@ const getAnswerMessage = createAsyncThunk(ActionType.ANSWER_MESSAGE, async ({cha
 
     let ans = await services.messages.getRandomMessage()
 
+    let date = new Date()
+
     messages.push({
         id:messages[messages.length-1].id+1,
         text:ans.value,
-        date:JSON.stringify(new Date()),
+        date:JSON.stringify(date),
         user_id: chat_id,
         chat_id: chat_id,
     })
 
-    dispatch(contactsActionCreator.update_contact({contact_id:chat_id, text:ans.value}))
+    dispatch(contactsActionCreator.update_contact({contact_id:chat_id, text:ans.value, date:date}))
 
     services.storage.setItem('messages', messages)
 

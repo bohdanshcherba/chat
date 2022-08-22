@@ -44,7 +44,9 @@
 }
 
 .contacts {
-
+    transition-duration: 0.3s;
+    overflow-y: auto;
+    height: 82vh;
 }
 
 .title {

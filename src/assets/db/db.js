@@ -25,7 +25,7 @@ export const default_contacts = [
         username:'Vasilii',
         avatar:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBXhl3XlzkvIajbwOZKtJWh1rsXQy-wXQ47MtUhwvgsc2OjLp4OQkdiLIlZuIYUox-ZSM&usqp=CAU',
         last_message:'',
-        date_last_message: JSON.stringify(new Date('2023-03-21')),
+        date_last_message:JSON.stringify(new Date('1999')), // for empty chat
     },
     {
         id:4,
@@ -34,6 +34,14 @@ export const default_contacts = [
         last_message:'Hello, how are you?',
         date_last_message: JSON.stringify(new Date()),
     },
+    {
+        id:5,
+        username:'Nazariy',
+        avatar:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgOB84LLmkJh3CK_3rZ_BrH5N-7Ir6SrnLJqnI-MOpKXgA3Ws1ZhwDgIiT0Pulwr439TY&usqp=CAU',
+        last_message:'',
+        date_last_message: JSON.stringify(new Date('1999')),
+    },
+
 ]
 
 export const default_messages = [
