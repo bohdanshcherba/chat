@@ -10,6 +10,19 @@
     position: relative;
 }
 
+@media screen and (max-width: 700px) {
+    .message{
+        padding-left: 35%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .message{
+        padding-left: 34%;
+    }
+}
+
+
 .text {
     background-color: #3F72AF;
     border-radius: 25px;

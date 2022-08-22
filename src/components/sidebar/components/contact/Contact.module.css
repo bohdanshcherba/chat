@@ -23,6 +23,7 @@
 
 }
 
+
 .dialog_title {
     display: flex;
     color: #112D4E;
@@ -51,4 +52,23 @@
 .start {
     font-weight: bold;
     color: #3F72AF;
+}
+@media screen and (max-width: 700px) {
+    .user_caption{
+        display: none;
+    }
+    .user_avatar {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 7px;
+    }
+    .contact {
+        padding:0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .user_avatar {
+        padding: 5px 0;
+    }
 }

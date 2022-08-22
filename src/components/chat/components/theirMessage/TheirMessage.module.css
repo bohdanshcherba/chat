@@ -11,6 +11,16 @@
     display: flex;
     align-items: center;
 }
+@media screen and (max-width: 860px) {
+    .message{
+        padding-right: 35%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .message{
+        padding-right: 34%;
+    }
+}
 
 .content {
     margin-left: 10px;

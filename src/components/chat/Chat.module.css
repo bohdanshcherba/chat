@@ -40,11 +40,7 @@
 
 }
 
-@media screen and (max-width: 860px) {
-    .chat__content{
-        width: 100%;
-    }
-}
+
 .input_block {
     width: 100%;
     border-top: 2px solid #3F72AF;
@@ -121,4 +117,10 @@
 .bottom{
     position: absolute;
     bottom: 0;
+}
+
+@media screen and (max-width: 860px) {
+    .chat__content{
+        width: 100%;
+    }
 }

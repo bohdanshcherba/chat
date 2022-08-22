@@ -22,7 +22,7 @@ function Chat({currentDialogId}) {
     }, [dispatch])
 
     if(currentDialogId === notification.contact_id){
-        dispatch(messagesActionCreator.updateNotification({notification:false}))
+        dispatch(messagesActionCreator.updateNotification({notification:false, showed:true}))
     }
 
     useEffect(() => {

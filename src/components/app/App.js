@@ -19,7 +19,7 @@ const App = () => {
         <div className={s.app}>
             <Sidebar current_user_id={current_user_id} setCurrentDialog={setCurrentDialog} />
             <Chat currentDialogId={currentDialogId}/>
-            {notification.notification ? <Notification notification={notification}/>: null}
+            {notification.notification ? <Notification notification={notification} currentDialogId={currentDialogId}/>: null}
         </div>
     );
 }

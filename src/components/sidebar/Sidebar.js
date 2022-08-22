@@ -55,7 +55,7 @@ function Sidebar({current_user_id, setCurrentDialog}) {
                                  setCurrentDialog={setCurrentDialogHandler}
                                  current_user_id={current_user_id}/>
         } else {
-            return <div>not found</div>
+            return <div className={s.not_found}>Not found contacts<br/> with username "{value}"</div>
         }
     }
 
@@ -72,6 +72,7 @@ function Sidebar({current_user_id, setCurrentDialog}) {
                         placeholder={'Search or start new chat'}
                         value={value}
                         onChange={SearchHandler}
+                        maxLength={20}
                     />
                 </div>
 

@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Avatar} from "../avatar/Avatar";
 import {messagesActionCreator} from '../../store/actions'
 
-const Notification = ({notification}) => {
+const Notification = ({notification, currentDialogId}) => {
 
     const dispatch = useDispatch()
 
@@ -16,9 +16,9 @@ const Notification = ({notification}) => {
 
     let url = "http://commondatastorage.googleapis.com/codeskulptor-assets/jump.ogg";
     let audio = new Audio(url);
-    if (!notification.showed){
-        audio.play()
+    if (!notification.showed && currentDialogId!==contact.id){
         dispatch(messagesActionCreator.updateNotification({showed: true, notification:true, contact_id:contact.id}))
+        audio.play()
     }
 
 

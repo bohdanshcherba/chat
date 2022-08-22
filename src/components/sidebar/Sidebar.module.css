@@ -6,7 +6,7 @@
     max-width: 420px;
     min-width: 20rem;
     border-right: 2px solid #3F72AF;
-
+    transition-duration: 0.3s;
 }
 
 .sidebar_header {
@@ -52,4 +52,41 @@
 .title {
     padding: 10px 0 0 10px;
     font-size: 23px;
+}
+
+.not_found{
+    max-width: 20rem;
+    height: 20vh;
+    display: flex;
+    word-wrap: break-word;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+}
+@media screen and (max-width: 700px) {
+    .sidebar{
+        max-width: 60px;
+        min-width: 60px;
+    }
+    .search {
+        display: none;
+
+        padding: 0;
+    }
+    .avatar{
+        padding:0;
+    }
+    .title{
+        padding: 0;
+        display: none;
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar{
+        max-width: 40px;
+        min-width: 40px;
+    }
 }
